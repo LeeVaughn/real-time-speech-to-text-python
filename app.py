@@ -21,7 +21,6 @@ stream = p.open(
     frames_per_buffer = FRAMES_PER_BUFFER
 )
 
-#
 async def send_receive():
     print(f"Connecting websocket to url ${URL}")
     async with websockets.connect(
@@ -65,6 +64,5 @@ async def send_receive():
                     assert False, "Not a websocket 4008 error"
         
         send_result, receive_result = await asyncio.gather(send(), receive())
-
 
 asyncio.run(send_receive())
